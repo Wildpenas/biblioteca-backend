@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#41414C" />
+    <link rel="shortcut icon" href="images/bookshelf_icon-icons.com_54414.png" type="image/png" />
+    <title>Biblioteca || Back - end</title>
+
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/partials/page-header.css" />
+    <link rel="stylesheet" href="./styles/partials/cards.css" />
+    <link rel="stylesheet" href="./styles/partials/buttons.css" />
+    <link rel="stylesheet" href="./styles/partials/forms.css" />
+    <link rel="stylesheet" href="./styles/partials/modal.css" />
+    <link rel="stylesheet" href="./styles/partials/animations.css" />
+    <link rel="stylesheet" href="./styles/pages/book.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="./scripts/book-edit.js"></script>
+    
+  </head>
+  <body id="page-book-edit">
+    <header class="page-header inner">
+      <div class="container animate-up">
+        <a href="index.html" class="back">
+          <img src="./images/back.svg" alt="" />
+        </a>
+        <h1>Editar Livro</h1>
+      </div>
+    </header>
+
+    <div class="container flex animate-up delay-2">
+      <main>
+        <form id="form-book">
+          <fieldset>
+
+            <legend>Dados do Livro</legend>
+            <div class="separator light"></div>
+
+
+            <div class="input-group">
+
+              <div class="input-wrapper">
+                  <label for="book-photo">Foto do livro (url:)</label>
+                  <input 
+                    type="text" 
+                    id="book-photo" 
+                    name="book-photo"
+                    value="https://i.imgur.com/UH3IPXw.jpeg"/>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="book-title">Titulo do livro</label>
+                <input 
+                  type="text" 
+                  id="book-title" 
+                  name="book-title"
+                  value="Harry Potter"
+                />
+              </div>
+              
+              <div class="input-wrapper">
+                  <label for="book-authors">Autores do livro</label>
+                  <input 
+                    type="text" 
+                    id="book-authors" 
+                    name="book-authors"
+                    value="JK Rowling"/>
+              </div>
+
+              <div class="input-wrapper">
+                  <label for="publisher">Editora</label>
+                  <input 
+                    type="text"
+                    id="publisher" 
+                    name="publisher"
+                    value="Rocco" />
+              </div>
+
+              
+
+
+            </div>
+
+          </fieldset>
+    
+        </form>
+      </main>
+
+      <aside class="card">
+        <img src="./images/livros.png" alt="Imagem de Dinheiro"/>
+        <p>
+          Dados do livro
+        </p>
+        <div class="button-group">
+          <button 
+            class="button green" 
+            form="form-book" 
+            type="submit" 
+            title="Salvar Dados">Salvar</button>
+            <a 
+            href="#" 
+            class="button gray open-modal"
+            >
+            <img 
+              src="./images/trash-24.svg" 
+              alt="Cancelar cadastro" 
+              title="Cancelar cadastro">
+          </a>
+        </div>
+      </aside>
+      
+    </div>
+    <!-- end container -->
+
+    <div class="modal-wrapper">
+      <div class="modal">
+        <img src="./images/trash-48.svg" alt="Excluir Livro" title="Excluir Livro" />
+        <h3>Excluir Livro</h3>
+        <p>Quer mesmo excluir esse Livro? <br/>
+        Ele será apagado para sempre.  
+        <p>
+        <footer>
+          <a 
+            class="button gray" 
+            href="#">Cancelar</a>
+          <button
+            class="button red"
+            type="submit"
+            form="delete-book">Excluir Livro</button>
+        </footer>
+      </div>
+      <form 
+        method="post" 
+        action="/book/delete" 
+        id="delete-book"></form>
+    </div>
+    <!-- end modal-wrapper -->
+  </body>
+</html>
+ 
